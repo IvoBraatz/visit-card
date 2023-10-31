@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Rubik+Glitch&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: rgb(138,138,138);
+    background: -moz-radial-gradient(circle, rgba(138,138,138,1) 0%, rgba(54,54,54,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(138,138,138,1) 0%, rgba(54,54,54,1) 100%);
+    background: radial-gradient(circle, rgba(138,138,138,1) 0%, rgba(54,54,54,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8a8a8a",endColorstr="#363636",GradientType=1);
+    font-family: 'gruppo';
+}
+
+.card-container {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    width: 32rem;
+    height: 17rem;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ececec;
+    background: #000000;
+    padding: 1.6rem;
+}
+
+.card-back {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    transform: rotateY(180deg);
+}
+
+.card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('fundo.jpeg');
+    background-size: cover;
+    filter: blur(1px);
+    filter: grayscale(40%);
+    z-index: -1;
+}
+
+.card-back::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.8);
+   
+}
+
+.card-container:hover .card {
+    transform: rotateY(180deg);
+    margin-left: 6.5rem;
+}
+
+.card-container:hover .card .card-back {
+    display: block;
+}
+
+.card-name {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #ececec;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #ececec;
+}
+
+.contact-heading {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #ececec;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-list li {
+    margin: 0;
+    color: #ececec;
+    font-size: 1rem;
+    font-weight: 500;
+    filter: drop-shadow(.5px .5px .5px #000000);
+}
+
+a {
+    text-decoration: none;
+    color: #ececec;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.site {
+    margin-top: 12rem;
+    list-style-type: none;
+    color: #ececec;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+#canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Coloca o canvas atrás de todo o conteúdo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}

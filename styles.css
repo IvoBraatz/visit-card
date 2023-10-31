@@ -47,6 +47,10 @@ body {
     padding: 1.6rem;
 }
 
+.card-front2{
+    border-radius: 20px #ececec;
+}
+
 .card-back {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     transform: rotateY(180deg);
@@ -145,3 +149,5 @@ a:hover {
     align-items: center;
     margin-top: 3rem;
 }
+
+
